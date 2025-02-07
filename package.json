@@ -1,0 +1,28 @@
+{
+    "name": "hexo-d2",
+    "version": "1.0.0",
+    "description": "Display d2 diagrams in hexo.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/leverimmy/hexo-d2.git"
+    },
+    "keywords": [
+      "hexo",
+      "d2",
+      "diagram"
+    ],
+    "author": "leverimmy",
+    "license": "CC-BY-NC-SA-4.0",
+    "bugs": {
+      "url": "https://github.com/leverimmy/hexo-d2/issues"
+    },
+    "homepage": "https://github.com/leverimmy/hexo-d2#readme",
+    "dependencies": {
+      "hexo-front-matter": "^1.0.0",
+      "hexo-fs": "^3.1.0"
+    }
+}
