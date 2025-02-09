@@ -33,7 +33,7 @@ Stage Four -> Stage One: repeat
 
 The diagram will be rendered and displayed as an SVG:
 
-<div class="d2-diagram" style="width: 30%; margin: auto;"><img src="img/example.svg"> </img></div>
+<img style="width: 30%; margin: auto;" src="img/example.svg" />
 
 ## Configuration
 
