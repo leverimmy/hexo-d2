@@ -4,13 +4,17 @@ Display d2 diagrams in [Hexo](https://hexo.io/) blog posts.
 
 ## Installation
 
-First of all, you need to install `d2`:
+### Step 1: Install d2
+
+To use this plugin, you need to install the d2 diagramming tool:
 
 ```bash
 curl -fsSL https://d2lang.com/install.sh | sh -s --
 ```
 
-Next install the plugin `hexo-d2`:
+### Step 2: Install hexo-d2
+
+Next, add the hexo-d2 plugin to your Hexo project:
 
 ```bash
 npm install hexo-d2 --save
@@ -18,7 +22,7 @@ npm install hexo-d2 --save
 
 ## Usage
 
-You can display d2 diagrams using mermaid-like grammar:
+To display D2 diagrams, you can use a syntax similar to Mermaid. Add code blocks with the d2 language identifier:
 
 ``````
 ```d2
@@ -27,26 +31,26 @@ Stage Four -> Stage One: repeat
 ```
 ``````
 
-And it will be displayed as
+The diagram will be rendered and displayed as an SVG:
 
 <div class="d2-diagram" style="width: 30%; margin: auto;"><img src="img/example.svg"> </img></div>
 
-## Configurations
+## Configuration
 
-The command to generate SVGs is:
+The command used to generate SVGs from D2 files is:
 
 ```bash
 d2 <d2file> <svgfile> --pad 10
 ```
 
-And the HTML to display the SVGs is:
+You can customize the HTML template for displaying the SVGs as needed. The default format is:
 
 ```html
 <div class="d2-diagram" style="width: 30%; margin: auto;">${svgContent}</div>
 ```
 
-Feel free to modify them to fulfill your needs!
+Feel free to adjust the command or HTML to match your specific requirements.
 
 ## License
 
-This plugin is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+This plugin is licensed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
