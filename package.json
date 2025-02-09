@@ -1,6 +1,6 @@
 {
     "name": "hexo-d2",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Display d2 diagrams in hexo.",
     "main": "index.js",
     "scripts": {
@@ -22,7 +22,6 @@
     },
     "homepage": "https://github.com/leverimmy/hexo-d2#readme",
     "dependencies": {
-      "hexo-front-matter": "^1.0.0",
       "hexo-fs": "^3.1.0"
     }
 }
