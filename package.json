@@ -1,7 +1,7 @@
 {
     "name": "hexo-d2",
     "version": "1.0.2",
-    "description": "Display d2 diagrams in hexo.",
+    "description": "Display d2 diagrams in Hexo blog posts.",
     "main": "index.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1"
