@@ -1,6 +1,6 @@
 {
     "name": "hexo-d2",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Display d2 diagrams in Hexo blog posts.",
     "main": "index.js",
     "scripts": {
