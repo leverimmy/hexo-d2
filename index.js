@@ -32,25 +32,23 @@ hexo.extend.filter.register('before_post_render', function (data) {
       // 检查缓存
       if (fs.existsSync(cacheFilePath)) {
         hexo.log.info(`使用缓存的 D2 图表: ${hash}`);
-        const svgContent = fs.readFileSync(cacheFilePath, 'utf8');
-        return `<div class="d2-diagram style="width: 30%;">${svgContent}</div>`;
+      } else {
+        // 创建临时文件
+        const tempFilePath = path.join(cacheDir, `temp-${hash}.d2`);
+        fs.writeFileSync(tempFilePath, code, 'utf8');
+
+        // 使用 D2 CLI 渲染为 SVG
+        execSync(`d2 ${tempFilePath} ${cacheFilePath} --pad 10`);
+
+        // 删除临时文件
+        fs.unlinkSync(tempFilePath);
       }
-
-      // 创建临时文件
-      const tempFilePath = path.join(cacheDir, `temp-${hash}.d2`);
-      fs.writeFileSync(tempFilePath, code, 'utf8');
-
-      // 使用 D2 CLI 渲染为 SVG
-      execSync(`d2 ${tempFilePath} ${cacheFilePath}`);
 
       // 读取生成的 SVG 文件
       const svgContent = fs.readFileSync(cacheFilePath, 'utf8');
 
-      // 删除临时文件
-      fs.unlinkSync(tempFilePath);
-
       // 返回 SVG 嵌入 HTML
-      return `<div class="d2-diagram">${svgContent}</div>`;
+      return `<div class="d2-diagram" style="width: 30%; margin: auto;">${svgContent}</div>`;
     } catch (err) {
       hexo.log.error('D2 渲染失败:', err);
       return `<pre>${match}</pre>`; // 渲染失败时保留原始代码块
